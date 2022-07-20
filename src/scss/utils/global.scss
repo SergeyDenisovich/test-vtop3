@@ -4,15 +4,7 @@
 
 html,
 body {
-  min-width: 420px;
-  font-family: 'Uni Neue', sans-serif;
-  font-size: 1vw;
-  color: #282828;
-  overflow-x: hidden;
-  line-height: 1.2;
-  text-size-adjust: 100%;
-
-  @media (max-width: 992px) {
-    font-size: 14px;
-  }
+	font-family: "Work Sans";
+	color: #111111;
+	background-color: #f4f5fc;
 }

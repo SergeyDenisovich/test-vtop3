@@ -4,3 +4,331 @@
 @import "./utils/variables.scss";
 
 // ==============================
+* {
+	box-sizing: border-box;
+}
+.section {
+	position: relative;
+	width: 100%;
+	max-width: 665px;
+	height: 480px;
+	background-color: #ffffff;
+	display: flex;
+	overflow: hidden;
+	z-index: 2;
+
+	#my-svg {
+		position: absolute;
+		z-index: -1;
+		left: 53.83%;
+		right: -15.64%;
+		top: 26.2%;
+		bottom: -11.64%;
+	}
+
+	#my-svg * {
+		fill-opacity: 0;
+		transition: fill-opacity 1s;
+	}
+
+	#my-svg.finished * {
+		fill-opacity: 1;
+		fill: #f9faff;
+		stroke: none;
+	}
+
+	&__left {
+		position: relative;
+		width: 137px;
+		background-color: #5a61ed;
+	}
+
+	&__left h1 {
+		position: absolute;
+		right: 20%;
+		left: 66%;
+		top: calc(50% - 75px + 252px);
+
+		white-space: nowrap;
+		transform: rotate(-90deg);
+		font-family: "PT Sans", sans-serif;
+		font-size: 49px;
+		line-height: 63px;
+		letter-spacing: 0.5px;
+		color: #ffffff;
+	}
+
+	&__right {
+		width: 528px;
+		padding: 40px 22px 32px 20px;
+	}
+}
+
+.form-section {
+	&__header {
+		margin-bottom: -2px;
+		font-size: 22px;
+		line-height: 26px;
+		letter-spacing: -0.46px;
+		font-weight: 600;
+	}
+
+	&__text {
+		margin-bottom: 16px;
+		font-size: 14px;
+		line-height: 18px;
+		letter-spacing: normal;
+		word-spacing: -1.5px;
+	}
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 350px;
+
+	&__top-section {
+		height: 216px;
+		// background-color: green;
+	}
+
+	&__block {
+		height: 42px;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-column-gap: 12px;
+
+		&:not(:last-child) {
+			margin-bottom: 16px;
+		}
+
+		& > div {
+			padding: 0;
+			margin: 0;
+			// border-bottom: 1px solid #f2f2f2;
+
+			label {
+				font-size: 12px;
+				line-height: 14px;
+				color: #7c7c7c;
+				word-spacing: -2px;
+			}
+
+			input[type="text"],
+			input[type="email"],
+			input[type="password"] {
+				margin-bottom: 5px;
+				padding-left: 1px;
+				padding-top: 4px;
+				width: 100%;
+				border: none;
+				font-size: 14px;
+				line-height: 16px;
+				font-weight: 500;
+				background-color: transparent;
+
+				&:focus,
+				&:active {
+					outline: none;
+				}
+			}
+
+			select {
+				padding: 0px;
+				padding-top: 4px;
+				width: 100%;
+				border: none;
+				font-size: 14px;
+				line-height: 16px;
+				font-weight: 500;
+				background-color: transparent;
+				appearance: none;
+				background-image: url("../images/arrow.svg");
+				background-repeat: no-repeat;
+				background-position: 99% 60%;
+				background-size: auto;
+				cursor: pointer;
+
+				&:focus,
+				&:active {
+					outline: none;
+				}
+			}
+
+			&:not(.no-border) {
+				border-bottom: 1px solid #f2f2f2;
+			}
+		}
+
+		&-gender {
+			position: relative;
+			margin-top: 4px;
+			display: flex;
+			align-items: center;
+
+			input[type="radio"] {
+				position: absolute;
+				opacity: 0;
+				width: 0;
+				height: 0;
+			}
+
+			input ~ label {
+				margin-left: 6px;
+				font-size: 14px;
+				line-height: 16px;
+				font-weight: 500;
+				color: #111111;
+				cursor: pointer;
+			}
+			label:not(:last-child) {
+				margin-right: 20px;
+			}
+
+			// create custom radio button
+			.checkmark {
+				display: inline flex;
+				position: relative;
+				height: 12px;
+				width: 12px;
+				border: 0.7px solid #5a61ed;
+				border-radius: 50%;
+			}
+
+			.checkmark:after {
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 6px;
+				height: 6px;
+				background-color: #5a61ed;
+				border-radius: 50%;
+				display: none;
+			}
+
+			input[type="radio"]:checked + .checkmark:after {
+				display: block;
+			}
+		}
+
+		&-date {
+			display: flex;
+			gap: 10px;
+
+			div[data-name="date"] {
+				flex-basis: 56px;
+				padding-bottom: 6px;
+				border-bottom: 1px solid #f2f2f2;
+			}
+
+			div[data-name="month"] {
+				flex-basis: 91px;
+				border-bottom: 1px solid #f2f2f2;
+			}
+
+			div[data-name="year"] {
+				flex-basis: 68px;
+				border-bottom: 1px solid #f2f2f2;
+			}
+		}
+	}
+
+	&__bottom-section {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		span {
+			position: relative;
+			top: -1px;
+			font-size: 13px;
+			line-height: 15px;
+			font-weight: 200;
+			color: #000000;
+			word-spacing: -1.5px;
+
+			a {
+				position: relative;
+				top: -2px;
+				color: #5a61ed;
+				text-decoration: underline;
+			}
+		}
+
+		button {
+			position: relative;
+			padding: 7px 26px;
+			font-family: "PT Sans", sans-serif;
+			font-style: normal;
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 18px;
+			background: #5a61ed;
+			color: #ffffff;
+			border: none;
+			cursor: pointer;
+		}
+	}
+}
+
+.animated {
+	opacity: 0;
+}
+
+// ========== fields controls animation
+.visible {
+	animation-name: fadeIn;
+	animation-duration: 2s;
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	25% {
+		opacity: 0.25;
+	}
+	50% {
+		opacity: 0.5;
+	}
+	75% {
+		opacity: 0.75;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+// ========== /fields controls animation
+
+// ========== send button animation
+.shake {
+	animation-name: shake;
+	animation-duration: 1s;
+}
+
+@keyframes shake {
+	0%,
+	to {
+		-webkit-transform: translateZ(0);
+		transform: translateZ(0);
+	}
+	10%,
+	30%,
+	50%,
+	70%,
+	90% {
+		-webkit-transform: translate3d(-10px, 0, 0);
+		transform: translate3d(-10px, 0, 0);
+	}
+	20%,
+	40%,
+	60%,
+	80% {
+		-webkit-transform: translate3d(10px, 0, 0);
+		transform: translate3d(10px, 0, 0);
+	}
+}
+// ========== /send button animation
