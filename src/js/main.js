@@ -150,7 +150,6 @@ $(function () {
 
 			let sendedFormData = formData;
 			console.log("Данные формы: ", sendedFormData);
-			console.log(data);
 
 			alert("Регистрация прошла успешно!");
 
