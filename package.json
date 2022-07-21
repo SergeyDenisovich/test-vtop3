@@ -6,7 +6,7 @@
 	"scripts": {
 		"dev": "gulp dev",
 		"build": "gulp build",
-		"deploy": "gulp deploy",
+		"deploy": "gulp build && gh-pages -d build",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"keywords": [],
@@ -37,5 +37,7 @@
 		"gulp-webp": "^4.0.1",
 		"sass": "^1.45.0"
 	},
-	"dependencies": {}
+	"dependencies": {
+		"gh-pages": "^4.0.0"
+	}
 }
