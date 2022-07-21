@@ -144,7 +144,7 @@ $(function () {
 		const isFormReadyToSend = isFormReady();
 
 		if (isFormReadyToSend) {
-			const formSendData = new formData();
+			const formSendData = new FormData();
 			Object.keys(formData).forEach((field) => {
 				formSendData.append(field, formData[field]);
 			});
