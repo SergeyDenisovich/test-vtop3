@@ -144,7 +144,7 @@ $(function () {
 		const isFormReadyToSend = isFormReady();
 
 		if (isFormReadyToSend) {
-			const response = await fetch("http://localhost:3000/server-ok.json");
+			const response = await fetch("/server-ok.json");
 			const responseData = await response.json();
 			const data = await responseData;
 
