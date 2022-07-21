@@ -14,6 +14,8 @@ const ttf2woff = require("gulp-ttf2woff");
 const ttf2woff2 = require("gulp-ttf2woff2");
 const fonter = require("gulp-fonter");
 const browserSync = require("browser-sync").create();
+const include = require("gulp-file-include");
+const ghPages = require("gulp-gh-pages");
 
 // Task for deploy
 gulp.task("deploy", function () {
