@@ -83,16 +83,16 @@
 				<div class="form-section__text">
 					Use the form below to create your account.
 				</div>
-				<form class="form">
+				<form class="form" novalidate>
 					<div class="form__top-section">
 						<div class="form__block">
-							<div class="animated">
+							<div class="animated validate-block">
 								<label for="firstName">First Name</label>
-								<input id="firstName" type="text" />
+								<input name="firstName" id="firstName" type="text" />
 							</div>
-							<div class="animated">
+							<div class="animated validate-block">
 								<label for="lastName">Last Name</label>
-								<input id="lastName" type="text" />
+								<input name="lastName" id="lastName" type="text" />
 							</div>
 						</div>
 						<div class="form__block">
@@ -105,9 +105,14 @@
 									<option value="asian">Asian</option>
 								</select>
 							</div>
-							<div class="animated">
-								<label for="mail">E-mail</label>
-								<input id="mail" type="email" />
+							<div class="animated email-block validate-block">
+								<img
+									class="check-icon hidden"
+									src="src/images/check.svg"
+									alt="Check"
+								/>
+								<label for="email">E-mail</label>
+								<input name="email" id="email" type="email" />
 							</div>
 						</div>
 						<div class="form__block">
@@ -119,9 +124,9 @@
 											<option value="21" selected>21</option>
 											<option value="22">22</option>
 											<option value="23">23</option>
-											<option value="23">24</option>
-											<option value="23">25</option>
-											<option value="23">26</option>
+											<option value="24">24</option>
+											<option value="25">25</option>
+											<option value="26">26</option>
 										</select>
 									</div>
 									<div data-name="month">
@@ -131,6 +136,9 @@
 											<option value="march">March</option>
 											<option value="april">April</option>
 											<option value="may">May</option>
+											<option value="june">June</option>
+											<option value="july">July</option>
+											<option value="august">August</option>
 											<option value="december" selected>December</option>
 										</select>
 									</div>
@@ -141,6 +149,7 @@
 											<option value="1997">1997</option>
 											<option value="1998">1998</option>
 											<option value="1999">1999</option>
+											<option value="2000">2000</option>
 											<option value="2001">2001</option>
 											<option value="2002">2002</option>
 											<option value="2003">2003</option>
@@ -151,7 +160,13 @@
 							<div class="no-border animated">
 								<label>Gender</label>
 								<div class="form__block-gender">
-									<input type="radio" name="gender" id="male" value="male" />
+									<input
+										type="radio"
+										name="gender"
+										id="male"
+										value="male"
+										checked
+									/>
 									<span class="checkmark"></span>
 									<label for="male">Male</label>
 									<input
@@ -166,13 +181,17 @@
 							</div>
 						</div>
 						<div class="form__block">
-							<div class="animated">
+							<div class="animated validate-block">
 								<label for="pass">Password</label>
-								<input id="pass" type="password" />
+								<input name="password" id="pass" type="password" />
 							</div>
-							<div class="animated">
+							<div class="animated validate-block">
 								<label for="confirmPass">Confirm Password</label>
-								<input id="confirmPass" type="password" />
+								<input
+									name="confirmPassword"
+									id="confirmPass"
+									type="password"
+								/>
 							</div>
 						</div>
 					</div>
@@ -182,7 +201,7 @@
 							<span>Have an account?</span>
 							<a href="#">Login</a>
 						</span>
-						<button id="sendBtn" type="submit">Complete Signup</button>
+						<button id="sendBtn" type="submit" disabled>Complete Signup</button>
 					</div>
 				</form>
 			</div>

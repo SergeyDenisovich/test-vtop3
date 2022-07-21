@@ -71,6 +71,9 @@
 		line-height: 26px;
 		letter-spacing: -0.46px;
 		font-weight: 600;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
 	}
 
 	&__text {
@@ -79,6 +82,9 @@
 		line-height: 18px;
 		letter-spacing: normal;
 		word-spacing: -1.5px;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
 	}
 }
 
@@ -90,10 +96,10 @@
 
 	&__top-section {
 		height: 216px;
-		// background-color: green;
 	}
 
 	&__block {
+		// position: relative;
 		height: 42px;
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
@@ -103,16 +109,51 @@
 			margin-bottom: 16px;
 		}
 
+		.email-block {
+			position: relative;
+		}
+
+		.check-icon {
+			position: absolute;
+			right: 0;
+			top: 55%;
+			z-index: 3;
+
+			&.hidden {
+				display: none;
+			}
+
+			&.visible {
+				display: block;
+			}
+		}
+
+		.validate-block {
+			position: relative;
+			.error-field {
+				position: absolute;
+				left: 0;
+				bottom: -15px;
+				color: red;
+				font-size: 10px;
+			}
+		}
+
 		& > div {
 			padding: 0;
 			margin: 0;
-			// border-bottom: 1px solid #f2f2f2;
+			max-width: 237px;
+			// overflow: hidden;
 
 			label {
 				font-size: 12px;
 				line-height: 14px;
+				max-width: 237px;
 				color: #7c7c7c;
 				word-spacing: -2px;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
 			}
 
 			input[type="text"],
