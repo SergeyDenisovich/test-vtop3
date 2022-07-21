@@ -144,19 +144,18 @@ $(function () {
 		const isFormReadyToSend = isFormReady();
 
 		if (isFormReadyToSend) {
-			const formSendData = new FormData();
-			Object.keys(formData).forEach((field) => {
-				formSendData.append(field, formData[field]);
-			});
+			// const formSendData = new FormData();
+			// Object.keys(formData).forEach((field) => {
+			// 	formSendData.append(field, formData[field]);
+			// });
 
 			const response = await fetch(
 				"https://jsonplaceholder.typicode.com/posts",
 				{
-					method: "POST",
+					body: JSON.stringify(formData),
 					headers: {
-						"Content-Type": "form/multipart",
+						"Content-type": "application/json; charset=UTF-8",
 					},
-					body: formSendData,
 				}
 			);
 			const responseData = await response.json();
