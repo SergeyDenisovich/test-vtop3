@@ -144,14 +144,7 @@ $(function () {
 		const isFormReadyToSend = isFormReady();
 
 		if (isFormReadyToSend) {
-			// const formSendData = new FormData();
-			// Object.keys(formData).forEach((field) => {
-			// 	formSendData.append(field, formData[field]);
-			// });
-
-			const response = await fetch(
-				"https://jsonplaceholder.typicode.com/posts"
-			);
+			const response = await fetch("/server-ok.json");
 			const responseData = await response.json();
 			const data = await responseData;
 
