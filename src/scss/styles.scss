@@ -10,11 +10,16 @@
 	position: relative;
 	width: 100%;
 	max-width: 665px;
+	min-width: 320px;
 	height: 480px;
 	background-color: #ffffff;
 	display: flex;
-	overflow: hidden;
 	z-index: 2;
+
+	@media (max-width: 500px) {
+		display: block;
+		height: auto;
+	}
 
 	* select {
 		color: $main-black-color;
@@ -82,6 +87,10 @@
 		@media (max-width: 600px) {
 			width: 100%;
 		}
+
+		@media (max-width: 500px) {
+			padding-top: 15px;
+		}
 	}
 }
 
@@ -96,6 +105,11 @@
 		overflow: hidden;
 		white-space: nowrap;
 		text-overflow: ellipsis;
+
+		@media (max-width: 500px) {
+			font-size: 26px;
+			margin-bottom: 0px;
+		}
 	}
 
 	&__text {
@@ -108,6 +122,10 @@
 		overflow: hidden;
 		white-space: nowrap;
 		text-overflow: ellipsis;
+
+		@media (max-width: 500px) {
+			font-size: 18px;
+		}
 	}
 }
 
@@ -116,6 +134,10 @@
 	flex-direction: column;
 	justify-content: space-between;
 	height: 350px;
+
+	@media (max-width: 500px) {
+		min-height: 100vh;
+	}
 
 	&__top-section {
 		height: 216px;
@@ -126,6 +148,12 @@
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		grid-column-gap: 12px;
+
+		@media (max-width: 500px) {
+			grid-template-columns: 1fr;
+			height: 120px;
+			grid-row-gap: 16px;
+		}
 
 		&:nth-of-type(3) {
 			@media (max-width: 665px) {
@@ -153,6 +181,10 @@
 			top: 55%;
 			z-index: 3;
 
+			@media (max-width: 500px) {
+				top: 45%;
+			}
+
 			&.hidden {
 				display: none;
 			}
@@ -164,12 +196,17 @@
 
 		.validate-block {
 			position: relative;
+
 			.error-field {
 				position: absolute;
 				left: 0;
 				bottom: -15px;
 				color: $error-color;
 				font-size: 10px;
+
+				@media (max-width: 500px) {
+					font-size: 14px;
+				}
 			}
 		}
 
@@ -181,7 +218,6 @@
 
 			@media (max-width: 600px) {
 				max-width: 100%;
-				// margin-bottom: 12px;
 			}
 
 			label {
@@ -193,6 +229,10 @@
 				overflow: hidden;
 				white-space: nowrap;
 				text-overflow: ellipsis;
+
+				@media (max-width: 500px) {
+					font-size: 14px;
+				}
 			}
 
 			input[type="text"],
@@ -207,6 +247,10 @@
 				line-height: 16px;
 				font-weight: 500;
 				background-color: transparent;
+
+				@media (max-width: 500px) {
+					font-size: 18px;
+				}
 
 				&:focus,
 				&:active {
@@ -229,6 +273,10 @@
 				background-position: 99% 60%;
 				background-size: auto;
 				cursor: pointer;
+
+				@media (max-width: 500px) {
+					font-size: 18px;
+				}
 
 				&:focus,
 				&:active {
@@ -261,7 +309,12 @@
 				font-weight: 500;
 				color: $main-black-color;
 				cursor: pointer;
+
+				@media (max-width: 500px) {
+					font-size: 18px;
+				}
 			}
+
 			label:not(:last-child) {
 				margin-right: 20px;
 			}
@@ -322,6 +375,11 @@
 		justify-content: space-between;
 		align-items: center;
 
+		@media (max-width: 450px) {
+			flex-direction: column-reverse;
+			gap: 20px;
+		}
+
 		span {
 			position: relative;
 			top: -1px;
@@ -330,6 +388,10 @@
 			font-weight: 200;
 			color: #000000;
 			word-spacing: -1.5px;
+
+			@media (max-width: 500px) {
+				font-size: 17px;
+			}
 
 			a {
 				position: relative;
@@ -351,6 +413,10 @@
 			color: #ffffff;
 			border: none;
 			cursor: pointer;
+
+			@media (max-width: 500px) {
+				font-size: 18px;
+			}
 		}
 	}
 }
