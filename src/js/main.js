@@ -164,8 +164,8 @@ $(function () {
 			// /=============================================
 
 			const response = await fetch(
-				// "https://jsonplaceholder.typicode.com/posts/1"
-				"http://localhost:3000/server-ok.json"
+				"https://jsonplaceholder.typicode.com/posts/1"
+				// "http://localhost:3000/server-ok.json"     // =========== launch on dev
 			);
 			const responseData = await response.json();
 			const data = await responseData;
