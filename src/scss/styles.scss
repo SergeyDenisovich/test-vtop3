@@ -22,7 +22,7 @@
 	}
 
 	* select {
-		color: $main-black-color;
+		color: #111111;
 	}
 
 	// =============== animated svg style ===============
@@ -307,7 +307,7 @@
 				font-size: 14px;
 				line-height: 16px;
 				font-weight: 500;
-				color: $main-black-color;
+				color: #111111;
 				cursor: pointer;
 
 				@media (max-width: 500px) {
