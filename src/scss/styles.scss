@@ -28,6 +28,10 @@
 		right: -15.64%;
 		top: 26.2%;
 		bottom: -11.64%;
+
+		@media (max-width: 665px) {
+			display: none;
+		}
 	}
 
 	#my-svg * {
@@ -44,8 +48,13 @@
 
 	&__left {
 		position: relative;
-		width: 137px;
+		max-width: 137px;
+		width: 100%;
 		background-color: $blue-color;
+
+		@media (max-width: 600px) {
+			display: none;
+		}
 	}
 
 	&__left h1 {
@@ -53,7 +62,6 @@
 		right: 20%;
 		left: 66%;
 		top: calc(50% - 75px + 252px);
-
 		white-space: nowrap;
 		transform: rotate(-90deg);
 		font-family: "PT Sans", sans-serif;
@@ -61,11 +69,19 @@
 		line-height: 63px;
 		letter-spacing: 0.5px;
 		color: #ffffff;
+
+		@media (max-width: 600px) {
+			top: calc(50% - 150px);
+		}
 	}
 
 	&__right {
 		width: 528px;
 		padding: 40px 22px 32px 20px;
+
+		@media (max-width: 600px) {
+			width: 100%;
+		}
 	}
 }
 
@@ -111,6 +127,14 @@
 		grid-template-columns: repeat(2, 1fr);
 		grid-column-gap: 12px;
 
+		&:nth-of-type(3) {
+			@media (max-width: 665px) {
+				grid-template-columns: 1fr;
+				height: 96px;
+				grid-row-gap: 16px;
+			}
+		}
+
 		.animated {
 			opacity: 0;
 		}
@@ -152,7 +176,13 @@
 		& > div {
 			padding: 0;
 			margin: 0;
+			width: 100%;
 			max-width: 237px;
+
+			@media (max-width: 600px) {
+				max-width: 100%;
+				// margin-bottom: 12px;
+			}
 
 			label {
 				font-size: 12px;
