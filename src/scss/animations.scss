@@ -1,0 +1,58 @@
+// ============================
+// ===== Animations
+// ============================
+
+// =============== fields controls animation ===============
+.visible {
+	animation-name: fadeIn;
+	animation-duration: 2s;
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	25% {
+		opacity: 0.25;
+	}
+	50% {
+		opacity: 0.5;
+	}
+	75% {
+		opacity: 0.75;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+// =============== /fields controls animation ===============
+
+// =============== send button animation ===============
+.shake {
+	animation-name: shake;
+	animation-duration: 1s;
+}
+
+@keyframes shake {
+	0%,
+	to {
+		-webkit-transform: translateZ(0);
+		transform: translateZ(0);
+	}
+	10%,
+	30%,
+	50%,
+	70%,
+	90% {
+		-webkit-transform: translate3d(-10px, 0, 0);
+		transform: translate3d(-10px, 0, 0);
+	}
+	20%,
+	40%,
+	60%,
+	80% {
+		-webkit-transform: translate3d(10px, 0, 0);
+		transform: translate3d(10px, 0, 0);
+	}
+}
+// =============== /send button animation ===============

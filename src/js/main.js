@@ -144,8 +144,28 @@ $(function () {
 		const isFormReadyToSend = isFormReady();
 
 		if (isFormReadyToSend) {
+			// =============================================
+			// ================ prepared data to send
+			// const formDataToSend = new FormData();
+			// Object.keys(formData).forEach((field) => {
+			// 	formDataToSend.append(field, formData[field]);
+			// });
+
+			// ...if we would have server to proccess form data
+			// fetch("https://...", {
+			// 	method: "POST",
+			// 	headers: {
+			// 		"Content-Type": "form/multipart",
+			// 	},
+			// 	body: formDataToSend,
+			// })
+			// 	.then((resp) => resp.json())
+			// 	.then((data) => console.log(data));
+			// /=============================================
+
 			const response = await fetch(
-				"https://jsonplaceholder.typicode.com/posts/1"
+				// "https://jsonplaceholder.typicode.com/posts/1"
+				"http://localhost:3000/server-ok.json"
 			);
 			const responseData = await response.json();
 			const data = await responseData;

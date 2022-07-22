@@ -1,12 +1,11 @@
 @import "./utils/fonts.scss";
+@import "./utils/variables.scss";
 @import "./utils/global.scss";
 @import "./utils/reset.scss";
-@import "./utils/variables.scss";
+
+@import "./animations.scss";
 
 // ==============================
-* {
-	box-sizing: border-box;
-}
 .section {
 	position: relative;
 	width: 100%;
@@ -17,6 +16,11 @@
 	overflow: hidden;
 	z-index: 2;
 
+	* select {
+		color: $main-black-color;
+	}
+
+	// =============== animated svg style ===============
 	#my-svg {
 		position: absolute;
 		z-index: -1;
@@ -36,11 +40,12 @@
 		fill: #f9faff;
 		stroke: none;
 	}
+	// =============== /animated svg style ===============
 
 	&__left {
 		position: relative;
 		width: 137px;
-		background-color: #5a61ed;
+		background-color: $blue-color;
 	}
 
 	&__left h1 {
@@ -71,6 +76,7 @@
 		line-height: 26px;
 		letter-spacing: -0.46px;
 		font-weight: 600;
+		// =============== prevent text overflow
 		overflow: hidden;
 		white-space: nowrap;
 		text-overflow: ellipsis;
@@ -82,6 +88,7 @@
 		line-height: 18px;
 		letter-spacing: normal;
 		word-spacing: -1.5px;
+		// =============== prevent text overflow
 		overflow: hidden;
 		white-space: nowrap;
 		text-overflow: ellipsis;
@@ -99,11 +106,14 @@
 	}
 
 	&__block {
-		// position: relative;
 		height: 42px;
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		grid-column-gap: 12px;
+
+		.animated {
+			opacity: 0;
+		}
 
 		&:not(:last-child) {
 			margin-bottom: 16px;
@@ -134,7 +144,7 @@
 				position: absolute;
 				left: 0;
 				bottom: -15px;
-				color: red;
+				color: $error-color;
 				font-size: 10px;
 			}
 		}
@@ -143,13 +153,12 @@
 			padding: 0;
 			margin: 0;
 			max-width: 237px;
-			// overflow: hidden;
 
 			label {
 				font-size: 12px;
 				line-height: 14px;
 				max-width: 237px;
-				color: #7c7c7c;
+				color: $label-color;
 				word-spacing: -2px;
 				overflow: hidden;
 				white-space: nowrap;
@@ -198,7 +207,7 @@
 			}
 
 			&:not(.no-border) {
-				border-bottom: 1px solid #f2f2f2;
+				border-bottom: 1px solid $border-color;
 			}
 		}
 
@@ -220,20 +229,20 @@
 				font-size: 14px;
 				line-height: 16px;
 				font-weight: 500;
-				color: #111111;
+				color: $main-black-color;
 				cursor: pointer;
 			}
 			label:not(:last-child) {
 				margin-right: 20px;
 			}
 
-			// create custom radio button
+			// ==== create custom radio button
 			.checkmark {
 				display: inline flex;
 				position: relative;
 				height: 12px;
 				width: 12px;
-				border: 0.7px solid #5a61ed;
+				border: 0.7px solid $blue-color;
 				border-radius: 50%;
 			}
 
@@ -245,7 +254,7 @@
 				transform: translate(-50%, -50%);
 				width: 6px;
 				height: 6px;
-				background-color: #5a61ed;
+				background-color: $blue-color;
 				border-radius: 50%;
 				display: none;
 			}
@@ -253,6 +262,7 @@
 			input[type="radio"]:checked + .checkmark:after {
 				display: block;
 			}
+			// ==== /create custom radio button
 		}
 
 		&-date {
@@ -262,17 +272,17 @@
 			div[data-name="date"] {
 				flex-basis: 56px;
 				padding-bottom: 6px;
-				border-bottom: 1px solid #f2f2f2;
+				border-bottom: 1px solid $border-color;
 			}
 
 			div[data-name="month"] {
 				flex-basis: 91px;
-				border-bottom: 1px solid #f2f2f2;
+				border-bottom: 1px solid $border-color;
 			}
 
 			div[data-name="year"] {
 				flex-basis: 68px;
-				border-bottom: 1px solid #f2f2f2;
+				border-bottom: 1px solid $border-color;
 			}
 		}
 	}
@@ -294,7 +304,7 @@
 			a {
 				position: relative;
 				top: -2px;
-				color: #5a61ed;
+				color: $blue-color;
 				text-decoration: underline;
 			}
 		}
@@ -307,69 +317,10 @@
 			font-weight: 400;
 			font-size: 14px;
 			line-height: 18px;
-			background: #5a61ed;
+			background: $blue-color;
 			color: #ffffff;
 			border: none;
 			cursor: pointer;
 		}
 	}
 }
-
-.animated {
-	opacity: 0;
-}
-
-// ========== fields controls animation
-.visible {
-	animation-name: fadeIn;
-	animation-duration: 2s;
-}
-
-@keyframes fadeIn {
-	0% {
-		opacity: 0;
-	}
-	25% {
-		opacity: 0.25;
-	}
-	50% {
-		opacity: 0.5;
-	}
-	75% {
-		opacity: 0.75;
-	}
-	100% {
-		opacity: 1;
-	}
-}
-// ========== /fields controls animation
-
-// ========== send button animation
-.shake {
-	animation-name: shake;
-	animation-duration: 1s;
-}
-
-@keyframes shake {
-	0%,
-	to {
-		-webkit-transform: translateZ(0);
-		transform: translateZ(0);
-	}
-	10%,
-	30%,
-	50%,
-	70%,
-	90% {
-		-webkit-transform: translate3d(-10px, 0, 0);
-		transform: translate3d(-10px, 0, 0);
-	}
-	20%,
-	40%,
-	60%,
-	80% {
-		-webkit-transform: translate3d(10px, 0, 0);
-		transform: translate3d(10px, 0, 0);
-	}
-}
-// ========== /send button animation
